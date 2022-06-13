@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+% Title page details: 
+\title{Assignment 11} 
+\author{Jarpula Bhanu Prasad - AI21BTECH11015}
+\date{\today}
+\logo{\large \LaTeX{}}
+
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Remove logo from the next slides
+\logo{}
+
+
+% Outline frame
+\begin{frame}{Papoulis chap 8 Exercise 8.29}
+TABLE OF CONTENTS
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Question}
+\begin{frame}{Problem}
+Q) A coin is tossed 64 times, and heads shows 22 times.
+\begin{itemize}
+    \item a) Test the hypothesis that the coin is fair with significance level 0.05.
+    \item b) We toss a coin 16 times, and heads shows $k$ times. If $k$ is such that $k_1 \le k \le k_2$, we accept the hypothesis that the coin is fair with significance level $\alpha$ =0.05. 
+\end{itemize}
+Find $k_1$ and $k_2$ and the resulting $\beta$ error.
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+   a)In this problem , $n=64$, $k=22$, $p_o = q_o =0.5$
+
+   \begin{align} 
+       q = \frac{k-np_o}{\sqrt{np_oq_o}} = 2.5 \\
+       z_{\frac{\alpha}{2}} =   z_{1-\frac{\alpha}{2}} \approx -2 
+   \end{align}
+
+   since 2.5 is outside the interval (-2,2), we reject the fair coin hypothesis.
+
+\end{frame}
+
+\begin{frame}
+   b) \begin{align} \label{3}
+       \beta(p) = P\{|q| < z_{1-\frac{\alpha}{2}} \} = G\big(\frac{z_{1-\frac{\alpha}{2}} -n_q}{\sqrt{pq/p_oq_o}} \big) - G\big(\frac{z_{\frac{\alpha}{2}} -n_q}{\sqrt{pq/p_oq_o}} \big)
+   \end{align}
+   from eqn\eqref{3} with $n=16$, $p_o = q_o = 0.5$
+
+   \begin{align}
+       \frac{k_1 - np_o}{\sqrt{np_oq_o}} = z_{\frac{\alpha}{2}} \\
+       \frac{k_2 - np_o}{\sqrt{np_oq_o}} = - z_{\frac{\alpha}{2}}
+   \end{align}
+
+   This yeilds $k_1$ = 8 - (2 $\times$ 2), $k_2$ = 8 + (2 $\times$ 2) \\
+   i.e., $k_1$ = 4 and $k_2$ = 12.
+
+\end{frame}
+
+% % Blocks frame
+\section{Codes}
+\begin{frame}{CODES}
+
+ \begin{block}{Beamer}
+         Download Beamer code from - \href{https://github.com/jarpula-Bhanu/Assignment-11/blob/main/Assignment_11.tex}{Beamer}
+    \end{block}
+\end{frame} 
+
+\end{document}
